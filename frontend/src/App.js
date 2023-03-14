@@ -1,30 +1,24 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
-import logo from './logo.svg';
+import { motion } from 'framer-motion'
+
+import logo from './icons/logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { Button, Stack, Container, Row, Col, Form, FormControl, Image } from 'react-bootstrap';
+
+import Login from './pages/Login';
+import Home from './pages/Home';
 
 function App() {
 
-  const [data, setData] = useState(null)
-
-  useEffect(() => {
-    fetch('/api')
-    .then(response => response.json())
-    .then(response => setData(response.message))
-  }, [])
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {
-            !data ? "Loading..." : data
-          }
-        </p>
-      </header>
-    </div>
+    <Container>
+      
+      {/* <Login/> */}
+      <Home/>
+    </Container>
   );
 }
 
